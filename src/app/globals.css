@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-rgb: 10, 10, 10;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+}
+
+.chat-bubble {
+  @apply px-4 py-2 rounded-lg max-w-[80%] break-words;
+}
+
+.chat-bubble.sent {
+  @apply bg-blue-500 text-white self-end;
+}
+
+.chat-bubble.received {
+  @apply bg-gray-200 dark:bg-gray-700 self-start;
+}
